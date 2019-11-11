@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/*
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+ */
 import com.savageorgiev.blockthis.R;
 import com.savageorgiev.blockthis.games.GameFragment;
 public class DonateFragment extends Fragment {
@@ -75,21 +77,21 @@ public class DonateFragment extends Fragment {
     }
 
     public void donatePatron(View v){
-        Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "Patreon"));
+        //Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "Patreon"));
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://www.patreon.com/blockthis"));
         MyStartActivity(intent);
     }
 
     public void donatePayPal(View v){
-        Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "PayPal"));
+        //Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "PayPal"));
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("https://www.paypal.me/SavaG/5"));
         MyStartActivity(intent);
     }
 
     public void getGames(View v){
-        Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "Game"));
+        //Answers.getInstance().logCustom(new CustomEvent("3.0 Donate").putCustomAttribute("Type", "Game"));
         Fragment fragment = new GameFragment();
         //replacing the fragment
         if (fragment != null) {

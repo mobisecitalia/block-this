@@ -16,8 +16,10 @@ import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/*
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+*/
 import com.loopj.android.image.SmartImageView;
 import com.savageorgiev.blockthis.R;
 
@@ -93,11 +95,11 @@ public class AppAdapter extends ArrayAdapter<App> {
                         super.onPageFinished(view, url);
                     }
                 });
-                Answers.getInstance().logCustom(new CustomEvent("3.0 Game Clicked")
+                /*Answers.getInstance().logCustom(new CustomEvent("3.0 Game Clicked")
                         .putCustomAttribute("Name", appList.get(position).getName())
                         .putCustomAttribute("Revenue", appList.get(position).getRevenueAmount())
                         .putCustomAttribute("Country", appList.get(position).getCountry())
-                );
+                );*/
                 redirectWebView.loadUrl(appList.get(position).getInstallUrl());
             }
         });

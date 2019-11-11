@@ -17,9 +17,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/*
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+
+ */
 import com.savageorgiev.blockthis.donate.DonateFragment;
 import com.savageorgiev.blockthis.games.GameFragment;
 import com.savageorgiev.blockthis.help.HelpFragment;
@@ -27,7 +30,7 @@ import com.savageorgiev.blockthis.settings.SettingsFragment;
 import com.savageorgiev.blockthis.vpn.VpnFragment;
 import com.savageorgiev.blockthis.whitelist.WhitelistAppsFragment;
 import com.winsontan520.wversionmanager.library.WVersionManager;
-import io.fabric.sdk.android.Fabric;
+//import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends AppCompatActivity
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Answers(), new Crashlytics());
+        //Fabric.with(this, new Answers(), new Crashlytics());
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch(id) {
             case R.id.action_settings:
-                Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", "Settings"));
+                //Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", "Settings"));
                 fragment = new SettingsFragment();
                 break;
         }
@@ -151,7 +154,7 @@ public class MainActivity extends AppCompatActivity
 
 
         if (itemId == R.id.nav_share){
-            Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", "Share"));
+            //Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", "Share"));
             shareApp();
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
@@ -166,7 +169,7 @@ public class MainActivity extends AppCompatActivity
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
 
-            Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", type));
+            //Answers.getInstance().logCustom(new CustomEvent("3.0 Menu").putCustomAttribute("Type", type));
         }
     }
 

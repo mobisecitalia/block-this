@@ -25,9 +25,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/*
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.ContentViewEvent;
 import com.crashlytics.android.answers.CustomEvent;
+
+ */
 import com.savageorgiev.blockthis.R;
 import com.savageorgiev.blockthis.donate.DonateFragment;
 
@@ -73,7 +76,7 @@ public class VpnFragment extends Fragment implements View.OnClickListener {
         ClickableSpan installSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
-                Answers.getInstance().logCustom(new CustomEvent("3.0 Homepage Support"));
+                //Answers.getInstance().logCustom(new CustomEvent("3.0 Homepage Support"));
 
                 Fragment fragment = new DonateFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
